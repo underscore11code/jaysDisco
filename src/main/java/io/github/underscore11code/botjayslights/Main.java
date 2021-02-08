@@ -20,7 +20,7 @@ public class Main implements Runnable {
             .build();
 
     final Call call = okHttp.newCall(new Request.Builder().url("https://api.jaywilliams.me/random_crap/set_light.php")
-            .post(fb).build());
+            .post(fb).header("User-Agent", "disco/1.0").build());
 
     try {
       final Response response = call.execute();
